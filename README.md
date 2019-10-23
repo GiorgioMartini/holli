@@ -15,6 +15,9 @@ We need for our next trip with the whole ☠️-crew a hotel and what we get fro
 
 Your task is now to present us the hotels, that we can choose the right one for our next trip. To make it easier for us to find the right hotel, we want to have a filter for hotel ⭐ (stars) and hotel 💰 (price).
 
+*Optional:*
+Did you miss something in our hotel API? Something what is really needed or you think is important to have before start with the design or frontend? Please write down your thoughts in a simple list with short statements that we can discuss these point together later.
+
 ### Technology
 
 You can choose whatever you want. A library, a framework, plugins or your own prepared skeleton which you love to start with.
@@ -42,4 +45,4 @@ Your second task is to explain our backend-🐵 what you need from him as a data
 
 Here you are completly free how the data structure should look like and which format it should have. Think about what you need to show us also a flight list where we can search flight to our hotel.
 
-Please describe with your own words what you need and give us a short example with dummy data how your data structure will look like.
+Please describe with your own words in a text what you need and give us a short example with dummy data how your data structure will look like. See this text as a briefing for a KickOff meeting that all departments can sit together and talk about the next steps.
