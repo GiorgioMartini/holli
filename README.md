@@ -41,7 +41,7 @@ Please install Node.js globally
 
 ### Tech Stack
 
-Please use our starter kit what we prepared for you. Use plain JavaScript! But you are free to install npm packages which you think is needed to solve the test in the best way.
+Please use our starter kit what we prepared for you. __Use plain JavaScript and no CSS framework!__ But you are free to install npm packages which you think is needed to solve the test in the best way.
 
 To start you must only install the dependencies
 
