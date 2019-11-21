@@ -67,7 +67,7 @@ We have no requirements for design. No colours, no mockups, nothing. Please feel
 
 ### Product Requirements
 
-Please create a ZIP file and include every asset (images, data files,... [no node_modules folder please]) which we need to run the presentation on local. Your final code should run without any error in following desktop browser:
+Please use either a public GitHub repository for your solution or create a ZIP file and include every asset (images, data files,... [no node_modules folder please]) which we need to run the presentation on local. Your final code should run without any error in following desktop browser:
 
 * Chrome(version >=76)
 * Safari (version >= 12)
