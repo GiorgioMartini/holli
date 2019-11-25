@@ -13,5 +13,8 @@
     "object-curly-spacing": "off",
     "space-before-function-paren": 0,
     "computed-property-even-spacing": "off"
-  }
+  },
+  "extends": [
+    "plugin:react/recommended"
+  ]
 }
