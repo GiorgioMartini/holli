@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Results } from '../components/results'
+import { Search } from '../components/search'
 import styles from '../styles/index.scss'
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <Results
+        <Search
           endpoint='http://fake-hotel-api.herokuapp.com/api/hotels'
         />
       </div>
