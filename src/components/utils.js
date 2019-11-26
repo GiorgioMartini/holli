@@ -20,13 +20,11 @@ function getErrorMsg (message, username) {
 
 export function fetchHotels (endpoint) {
   return fetch(endpoint)
-    .then((res) => {
-      res.json()
-    })
+    .then((res) => res.json())
     .then((data) => {
-      if (!data) {
-        throw new Error(data.message)
-      }
+      // if (!data) {
+      //   throw new Error(data.message)
+      // }
       return data
     })
 }

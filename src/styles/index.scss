@@ -1,6 +1,28 @@
-$body-color: slateblue;
+@import url('https://fonts.googleapis.com/css?family=Quicksand:700&display=swap');
+
+$near-black: #212121;
 
 body {
-  color: $body-color;
+  color: $near-black;
+  background: whitesmoke;
   font-family: sans-serif;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
+// Typography
+.quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
