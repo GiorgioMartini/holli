@@ -9,15 +9,15 @@ export function FlightResults ({flights}) {
 
   return (
     <div className='flex-wrap cards'>
-        {flights &&
-          flights.map( (x, i) => (
-            <div className="flight-Card-wrapper card" key={i}>
-                  <img className="flight-card-img w-100" onError={(e) => addDefaultSrc(e)} src={x.images[0]} />
-                  <p className="quicksand flight-Card-title">{x.name}</p>
-                  <p className="flight-Card-body">{x.description}</p>
-            </div>
-          ))
-        }
+          {flights &&
+            flights.map( (x, i) => (
+              <div className="flight-Card-wrapper card" key={i}>
+                    <img className="flight-card-img w-100" onError={(e) => addDefaultSrc(e)} src={x.images[0]} />
+                    <p className=" quicksand flight-Card-title">{x.name}</p>
+                    <p className="flight-Card-body">{x.description}</p>
+              </div>
+            ))
+          }
     </div>
   )
 }
