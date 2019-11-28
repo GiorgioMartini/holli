@@ -12,6 +12,11 @@ body {
   display: flex;
 }
 
+.price-filter-wrapper {
+  display: inline;
+  padding-left: 2rem;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -20,9 +25,13 @@ body {
   width: 100%;
 }
 
+.pointer {
+  cursor: pointer;
+}
 
 // Typography
 .quicksand {
   font-family: 'Quicksand', sans-serif;
 }
+
 
