@@ -1,3 +1,56 @@
+
+
+# Frontend Challenege Solution ☠️
+
+
+
+Thanks for the opportunity to complete this challenege, it was great fun and I did learn some things along the way.
+
+Regarding my solution, unfortunately I realized too late, there is an endpoint to get filteredresults for stars and price, so I added that functionality inside my app, it does filtering by price and stars, but It's making all the operation on a unfiltered response like the response of this api:
+
+```
+http://fake-hotel-api.herokuapp.com/api/hotels
+```
+
+The mock images provider 'lorempixel' is often slow, some images consistently timeout, so I added default image backup:
+
+[![N|Solid](https://thumb2.holidaypirates.com/Heyb--pOABv6fdJUPfI5UDvkzLQ=/424x195/https://media.mv.urlaubspiraten.de/images/2019/11/5dd6574938114637411283sj5tm69i.jpg)]()
+
+For that reason, when you change stars or price, the images dont update as fast as it should.
+
+# Things I could not get to:
+
+  - Catch error on the reviews fetch call
+  - Tests
+  - Make the filtering with the result of fetching the api with the correspondent query params
+  - Improve the UI design
+
+# The flight API
+
+For the flights API we need, we can follow the structure of the hotel and reviews API's.
+
+It could look like this:
+```
+http://fake-hotel-api.herokuapp.com/api/flights
+```
+
+Response can look something like this:
+```
+[ { "id": "4ce349c9-009c-40ab-8716-5f1d794e7c11", "airplane": "id repellendus sunt", "departingCity": "Qatar", "arrivalCity": "New Rosella", "price": 365, "images": [ "http://lorempixel.com/640/480/city?71822" ], "date_start": "2019-11-21T13:13:54.841Z", "date_end": "2020-08-06T10:34:08.830Z", "description": "Ad enim tenetur fugit maiores et sunt quas aut. Beatae aut fuga tempora saepe ad consequuntur. Quod tempore quo quaerat maxime. Et et error. Ea id assumenda est perferendis voluptatem qui officia et distinctio. Voluptate laudantium voluptatem voluptas saepe hic ut ullam dolor." }...]
+```
+
+### Query params:
+
+| QUERY PARAMETER | VALUE |
+| ------ | ------ |
+| no_error | Optional. Prevents server from errors if set. By default server returns error sometimes. |
+| force_error | Optional. Enforces server error if set. |
+| count | Optional. The number of hotel flight to return. Default: random count from 0 to 500. |
+| directFlight | Optional. Boolean that indicates if flight is direct or not |
+| max_price | Optional. Maximum offer price.
+
+
+
 # Welcome on board ☠️
 
 As a potential new crew member, we have some tests for you to show us what a pirate you can become. Like a real pirate, you must find your way by yourself sometimes. We give you only some little hints to get the 🔑 to our pirate ship.
