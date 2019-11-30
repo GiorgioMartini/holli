@@ -7,6 +7,34 @@
 }
 
 .filter-max-price {
-  min-width: 300px;
+  min-width: 150px;
   display: inline-block;
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.filter-wrapper {
+  padding: 2rem;
+  border-bottom: 1px solid #0000000f;
+  border-top: 1px solid #0000000f;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.filtered-hotel-results {
+  min-width: 6rem;
+}
+
+.error {
+  text-align: center;
+  padding: 3rem;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
 }

@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { fetchHotels } from './utils'
+import { fetchPirateApi } from './utils'
 import PropTypes from 'prop-types'
+import { HotelResults } from './hotelResults'
 import styles from './search.scss'
-import { FlightResults } from './flightResults'
 
-export function Search ({ endpoint, title = 'Flights for your next adventure' }) {
+export function Search ({ endpoint, title = '☠️-crew Trip' }) {
   const sliderMaxVal = 4
+  const errorText = `Aargh! Something went wrong, we've notified our pirate engineers and it should be fixed soon. for now refresh your page and pick the perfect hotel for the next trip! `
   const [results, setresults] = useState([])
-  const [priceToFilter, setPriceToFilter] = useState(0)
+  const [priceToFilter, setPriceToFilter] = useState(1000)
   const [filteredResults, setFilteredResults] = useState([])
   const [stars, setStars] = useState(3)
+  const [error, setError] = useState(false)
   const ratings = [1,2,3,4,5]
   const [maxPrice, setMaxPrice] = useState(0)
 
@@ -19,21 +21,21 @@ export function Search ({ endpoint, title = 'Flights for your next adventure' })
         return x.stars <= stars && x.price <= priceToFilter
       }))
     }
-  
     filterResults();
   }, [priceToFilter, stars])
 
   useEffect(() => {
-    fetchHotels(endpoint)
+    fetchPirateApi(endpoint)
       .then( data => {
         setFilteredResults(data)
         setresults(data)
-        const max = Math.max.apply(Math, data.map((x) => x.price ))
+        const max = Math.max.apply(Math, data.map((x) => x.price))
         setMaxPrice(max)
         setPriceToFilter(max)
-        // filterResutls()
       })
-      .catch(e => console.log('MAKE SOMETHING IN UI', e))
+      .catch(e => {
+        setError(true)
+      })
     }, [endpoint])
   
   function handleStarHover(starRate) {
@@ -42,17 +44,16 @@ export function Search ({ endpoint, title = 'Flights for your next adventure' })
     filterResutls()
   }
 
-  // function filterResutls() {
-  //   setFilteredResults(results.filter(x =>  {
-  //     return x.stars <= stars && x.price <= priceToFilter
-  //   }))
-  // }
+  function filterResutls() {
+    setFilteredResults(results.filter(x =>  {
+      return x.stars <= stars && x.price <= priceToFilter
+    }))
+  }
 
   function starClass(starRate) {
     return starRate <= stars ? 'pointer star-active' : 'pointer stars'
   }
   
-  //Slider
   function handleSliderChange(e) {
     let priceFraction = maxPrice/sliderMaxVal
     setPriceToFilter(priceFraction*(parseInt(e.target.value)+1))
@@ -60,36 +61,40 @@ export function Search ({ endpoint, title = 'Flights for your next adventure' })
   }
 
   return (
-    <div className=''>
-      <h2 className=''>{title}</h2>
-      <span>Filter by stars </span>
-      {ratings.map( (starRate, i) => (
-        <span
-          key={i}
-          onMouseEnter={() => handleStarHover(starRate)}
-          className={starClass(starRate)}>
-          ★
-        </span>
-      ))}
-      <div className="price-filter-wrapper">
-          <span className="filter-max-price">
-            Max price:
-            {`${priceToFilter}$`}
-          </span>
-          <input
-            type="range"
-            id="start"
-            name="volume"
-            min="0"
-            max={sliderMaxVal}
-            onChange={e => handleSliderChange(e)}
-            />
+    <div>
+      <h2 className='title'>{title}</h2>
+      <div className="flex filter-wrapper">
+        <div>
+          <span>Filter by stars </span>
+          {ratings.map( (starRate, i) => (
+            <span
+              key={i}
+              onMouseEnter={() => handleStarHover(starRate)}
+              className={starClass(starRate)}>
+              ★
+            </span>
+          ))}
+          <div className="price-filter-wrapper">
+              <span className="filter-max-price">
+                Max price:
+                {`${priceToFilter}$`}
+              </span>
+              <input
+                type="range"
+                id="start"
+                name="volume"
+                min="0"
+                max={sliderMaxVal}
+                onChange={e => handleSliderChange(e)}
+                />
+          </div>
+        </div>
+        <span className="filtered-hotel-results">{filteredResults.length} hotels</span>
       </div>
-        <p>filtered Results: {filteredResults.length}</p>
-        <p>Results: {results.length}</p>
-      <FlightResults
-        flights={filteredResults}
-      />
+      { error
+        ? (<p className="error">{errorText}</p>)
+        : (<HotelResults hotels={filteredResults} />)
+      }
     </div>
   )
 }

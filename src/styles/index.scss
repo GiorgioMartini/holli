@@ -29,9 +29,19 @@ body {
   cursor: pointer;
 }
 
+.relative {
+  position: relative;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 // Typography
 .quicksand {
   font-family: 'Quicksand', sans-serif;
 }
-
-
