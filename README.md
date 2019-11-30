@@ -6,6 +6,9 @@
 
 Thanks for the opportunity to complete this challenege, it was great fun and I did learn some things along the way.
 
+To start the app please run:
+`npm i` `npm start`
+
 Regarding my solution, unfortunately I realized too late, there is an endpoint to get filtered results for stars and price, so I added that functionality inside my app, it does filtering by price and stars, but It's making all the operation on a unfiltered response like the response of this api:
 
 ```
