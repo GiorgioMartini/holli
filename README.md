@@ -40,7 +40,15 @@ http://fake-hotel-api.herokuapp.com/api/flights
 Response can look something like this:
 ```
 [ { "id": "4ce349c9-009c-40ab-8716-5f1d794e7c11",
-      "airLine": "id repellendus sunt", "departingCity": "Qatar", "arrivalCity": "New Rosella", "price": 365, "images": [ "http://lorempixel.com/640/480/city?71822" ], "date_start": "2019-11-21T13:13:54.841Z", "date_end": "2020-08-06T10:34:08.830Z", "description": "Ad enim tenetur fugit maiores et sunt quas aut. Beatae aut fuga tempora saepe ad consequuntur. Quod tempore quo quaerat maxime. Et et error. Ea id assumenda est perferendis voluptatem qui officia et distinctio. Voluptate laudantium voluptatem voluptas saepe hic ut ullam dolor." }...]
+      "airLine": "id repellendus sunt",
+      "departingCity": "Qatar", "arrivalCity": "New Rosella",
+      "price": 365, "images": [ "http://lorempixel.com/640/480/city?71822" ],
+      "date_start": "2019-11-21T13:13:54.841Z",
+      "date_end": "2020-08-06T10:34:08.830Z",
+      "description": "Ad enim tenetur fugit maiores et sunt quas aut. Beatae aut fuga tempora saepe ad consequuntur. Quod            tempore quo quaerat maxime. Et et error. Ea id assumenda est perferendis voluptatem qui officia et distinctio.                Voluptate laudantium voluptatem voluptas saepe hic ut ullam dolor."
+  }
+  ...
+]
 ```
 
 ### Query params:
