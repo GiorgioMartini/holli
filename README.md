@@ -4,7 +4,7 @@
 
 
 
-Thanks for the opportunity to complete this challenege, it was great fun and I did learn some things along the way.
+Thanks for the opportunity to complete this challenge, it was great fun and I did learn some things along the way.
 
 To start the app please run:
 `npm i` `npm start`
