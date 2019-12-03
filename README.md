@@ -41,7 +41,8 @@ Response can look something like this:
 ```
 [ { "id": "4ce349c9-009c-40ab-8716-5f1d794e7c11",
       "airLine": "id repellendus sunt",
-      "departingCity": "Qatar", "arrivalCity": "New Rosella",
+      "departingCity": "Qatar",
+      "arrivalCity": "New Rosella",
       "price": 365, "images": [ "http://lorempixel.com/640/480/city?71822" ],
       "date_start": "2019-11-21T13:13:54.841Z",
       "date_end": "2020-08-06T10:34:08.830Z",
@@ -57,9 +58,11 @@ Response can look something like this:
 | ------ | ------ |
 | no_error | Optional. Prevents server from errors if set. By default server returns error sometimes. |
 | force_error | Optional. Enforces server error if set. |
-| count | Optional. The number of hotel flight to return. Default: random count from 0 to 500. |
 | directFlight | Optional. Boolean that indicates if flight is direct or not |
 | max_price | Optional. Maximum offer price.
+| max_price | Optional. Maximum offer price.
+| departingCity | Optional. City from where plane departs.
+| ArrivalCity | Optional. Final destination of the flight.
 
 
 
